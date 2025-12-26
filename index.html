@@ -94,10 +94,10 @@ ul {
 <h1>Create Professional AI Headshots</h1>
 <p class="subtitle">Perfect for LinkedIn, resumes & online profiles</p>
 
+<!-- ⭐ REAL IMAGES HERE ⭐ -->
 <div class="preview">
-    <img src="https://via.placeholder.com/220x260?text=Before">
-    <img src="https://via.placeholder.com/220x260?text=AI+Headshot">
-    <img src="https://via.placeholder.com/220x260?text=Professional">
+    <img src="./images/before.jpg" alt="Before image">
+    <img src="./images/after.jpg" alt="After AI Headshot">
 </div>
 
 <div class="box">
@@ -110,44 +110,46 @@ ul {
 
 <div class="box">
 <p class="lock-text">
-🔒 Access temporarily limited to prevent abuse and ensure fair usage.<br>
+🔒 Access is temporarily limited to prevent abuse and ensure fair usage.<br>
 Please complete a quick verification to continue.
 </p>
 
-<!-- OGADS CONTENT LOCKER -->
+<!-- ⭐ OGADS LOCKER LOADS HERE ⭐ -->
 <div id="ogads-locker"></div>
 
-<a href="#ogads-locker" class="cta">Unlock AI Headshot Access</a>
+<a href="#" onclick="openContentLocker();" class="cta">Unlock AI Headshot Access</a>
+
 </div>
 
-<!-- POST LOCKER CONTENT (OGADS WILL UNLOCK THIS) -->
-<div class="box">
+<div class="box" id="post-content" style="display:none;">
 <h2>Your AI Headshot Access Is Ready</h2>
 
 <h3>How to Create Professional AI Headshots</h3>
 
 <ul>
-<li><strong>Choose the right photo:</strong> clear face, neutral expression, good lighting</li>
-<li><strong>Upload to an AI headshot tool:</strong> select business or professional style</li>
-<li><strong>Adjust settings:</strong> soft lighting, neutral background</li>
-<li><strong>Export:</strong> use square format for LinkedIn & CVs</li>
+<li><strong>Choose the right photo:</strong> clear face, neutral expression</li>
+<li><strong>Upload to an AI headshot tool</strong></li>
+<li><strong>Pick business or professional style</strong></li>
+<li><strong>Export:</strong> square format for LinkedIn</li>
 </ul>
 
 <p>
-Recommended AI tools include free and freemium generators that allow limited access or trial usage.
 Results may vary depending on the tool and image quality.
 </p>
 </div>
 
 <p class="footer">
 This page provides guidance and access recommendations for AI headshot creation.
-Results depend on selected tools and user input.
 </p>
 
 </div>
 
-<!-- OGADS SCRIPT -->
+<!-- ⭐ OGADS SCRIPT ⭐ -->
 <script type="text/javascript">
+function openContentLocker(){
+    if(typeof ogload == "function"){ ogload(); }
+}
+
 var ogads = document.createElement('script');
 ogads.src = 'https://www.ogads.com/content_lockers/script.php?id=YOUR_LOCKER_ID';
 document.body.appendChild(ogads);
