@@ -1,88 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AI Headshot Access</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-    text-align: center;
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  margin:0;
 }
 
-.container {
-    max-width: 720px;
-    margin: auto;
-    padding: 20px;
+.container{
+  max-width:850px;
+  margin:0 auto;
+  padding:20px;
+  text-align:center;
 }
 
-h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+h1{
+  font-size:32px;
+  margin-top:15px;
+  color:#111;
 }
 
-.subtitle {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
+.subtitle{
+  font-size:18px;
+  color:#444;
+  margin-bottom:25px;
 }
 
-.preview {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 20px;
+/* Images Before/After */
+.preview{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-.preview img {
-    width: 100%;
-    border-radius: 10px;
+.preview img{
+  width:32%;
+  max-width:240px;
+  height:auto;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
 
-.box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
+/* Box content */
+.box{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  margin-top:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.07);
 }
 
-ul {
-    text-align: left;
-    padding-left: 20px;
+/* CTA Button */
+.cta{
+  background:#ff4500;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:15px 28px;
+  font-size:18px;
+  font-weight:bold;
+  margin:20px auto;
+  display:block;
+  width:fit-content;
+  transition:0.25s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-.lock-text {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
+.cta:hover{
+  background:#e03e00;
+  transform:scale(1.03);
+  cursor:pointer;
 }
 
-.cta {
-    display: inline-block;
-    background: #0066ff;
-    color: #fff;
-    padding: 14px 22px;
-    font-size: 18px;
-    border-radius: 30px;
-    text-decoration: none;
-    animation: pulse 1.2s infinite;
-}
+/* Mobile Optimization */
+@media (max-width:768px){
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+  h1{
+    font-size:24px;
+  }
 
-.footer {
-    font-size: 12px;
-    color: #777;
-    margin-top: 30px;
+  .subtitle{
+    font-size:15px;
+  }
+
+  .preview{
+    flex-direction:column;
+  }
+
+  .preview img{
+    width:100%;
+    max-width:none;
+  }
+
+  .cta{
+    width:90%;
+    font-size:17px;
+    padding:14px 0;
+  }
+
+  .box{
+    padding:18px;
+  }
 }
 </style>
 </head>
@@ -91,67 +116,30 @@ ul {
 
 <div class="container">
 
-<h1>Create Professional AI Headshots</h1>
-<p class="subtitle">Perfect for LinkedIn, resumes & online profiles</p>
+  <h1>AI Headshot Generator</h1>
+  <p class="subtitle">Upload your photo and instantly turn it into a professional AI headshot.</p>
 
-<!-- ⭐ REAL IMAGES HERE ⭐ -->
-<div class="preview">
-    <img src="./images/before.jpg" alt="Before image">
-    <img src="./images/after.jpg" alt="After AI Headshot">
-</div>
+  <div class="preview">
+    <img src="./images/before.jpg" alt="Before">
+    <img src="./images/after.jpg" alt="After">
+  </div>
 
-<div class="box">
-<ul>
-<li>No camera or studio required</li>
-<li>AI-generated professional look</li>
-<li>Ideal for job seekers & professionals</li>
-</ul>
-</div>
+  <button class="cta" onclick="openContentLocker()">Access AI Headshot Tool</button>
 
-<div class="box">
-<p class="lock-text">
-🔒 Access is temporarily limited to prevent abuse and ensure fair usage.<br>
-Please complete a quick verification to continue.
-</p>
-
-<!-- ⭐ OGADS LOCKER LOADS HERE ⭐ -->
-<div id="ogads-locker"></div>
-
-<a href="#" onclick="openContentLocker();" class="cta">Unlock AI Headshot Access</a>
+  <div class="box">
+    <p>Click the button above to unlock the AI Headshot Generator. Complete the quick verification to get full access.</p>
+  </div>
 
 </div>
 
-<div class="box" id="post-content" style="display:none;">
-<h2>Your AI Headshot Access Is Ready</h2>
-
-<h3>How to Create Professional AI Headshots</h3>
-
-<ul>
-<li><strong>Choose the right photo:</strong> clear face, neutral expression</li>
-<li><strong>Upload to an AI headshot tool</strong></li>
-<li><strong>Pick business or professional style</strong></li>
-<li><strong>Export:</strong> square format for LinkedIn</li>
-</ul>
-
-<p>
-Results may vary depending on the tool and image quality.
-</p>
-</div>
-
-<p class="footer">
-This page provides guidance and access recommendations for AI headshot creation.
-</p>
-
-</div>
-
-<!-- ⭐ OGADS SCRIPT ⭐ -->
+<!-- OGAds Script -->
 <script type="text/javascript">
 function openContentLocker(){
-    if(typeof ogload == "function"){ ogload(); }
+  if(typeof ogload == "function"){ ogload(); }
 }
 
 var ogads = document.createElement('script');
-ogads.src = 'https://www.ogads.com/content_lockers/script.php?id=YOUR_LOCKER_ID';
+ogads.src = 'https://www.ogads.com/content_lockers/script.php?id=YOUR_LOCKER_ID_HERE';
 document.body.appendChild(ogads);
 </script>
 
