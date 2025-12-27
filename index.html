@@ -61,9 +61,13 @@ h1{
   padding:15px 28px;
   font-size:18px;
   font-weight:bold;
-  margin:20px auto;
+  margin:25px auto;
   display:block;
-  width:fit-content;
+  cursor:pointer;
+}
+
+.cta:hover{
+  background:#e03e00;
 }
 </style>
 </head>
@@ -73,32 +77,46 @@ h1{
 <div class="container">
 
   <h1>AI Headshot Generator</h1>
-  <p class="subtitle">Upload your photo and instantly turn it into a professional AI headshot.</p>
+  <p class="subtitle">
+    Upload your photo and instantly turn it into a professional AI headshot.
+  </p>
 
   <div class="preview">
-    <img src="./images/before.jpg">
-    <img src="./images/after.jpg">
+    <img src="./images/before.jpg" alt="Before">
+    <img src="./images/after.jpg" alt="After">
   </div>
 
-  <!-- CTA SIMPLE -->
-  <a href="#locker">
-    <button class="cta">Access AI Headshot Tool</button>
-  </a>
+  <!-- ✅ BOUTON : CLICK = LOCKER -->
+  <button class="cta" onclick="loadLocker()">
+    Access AI Headshot Tool
+  </button>
 
   <div class="box">
-    <p>Click the button above to unlock the AI Headshot Generator.</p>
+    <p>
+      Click the button above to unlock the AI Headshot Generator.
+      Complete one quick step to continue.
+    </p>
   </div>
 
 </div>
 
-<!-- 🔒 ICI LE LOCKER OGAds -->
-<div id="locker">
-  <script
-    type="text/javascript"
-    id="ogjs"
-    src="https://applocked.org/cl/js/9vv92p">
-  </script>
-</div>
+<!-- 🔒 LE LOCKER SERA INJECTÉ ICI -->
+<div id="locker-container"></div>
+
+<!-- ✅ SCRIPT FINAL OGAds (SAFE) -->
+<script>
+function loadLocker(){
+  // Empêche double chargement
+  if(document.getElementById("ogjs")) return;
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.id = "ogjs";
+  script.src = "https://applocked.org/cl/js/9vv92p";
+
+  document.getElementById("locker-container").appendChild(script);
+}
+</script>
 
 </body>
 </html>
